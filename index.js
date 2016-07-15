@@ -50,6 +50,12 @@ var rules = {
   'require-optimization': require('./lib/rules/require-optimization')
 };
 
+var ruleNames = Object.keys(rules);
+var allRules = {};
+for (var i = 0; i < ruleNames.length; i++) {
+  allRules[ruleNames[i]] = 2;
+}
+
 module.exports = {
   rules: rules,
   configs: {
@@ -83,7 +89,7 @@ module.exports = {
           jsx: true
         }
       },
-      rules: rules
+      rules: allRules
     }
   }
 };
