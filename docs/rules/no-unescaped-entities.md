@@ -7,15 +7,15 @@ For example, if one were to misplace their closing `>` in a tag:
 
 ```jsx
 <MyComponent
-  name={name}
-  type={"string"}
-  foo=bar>  {/* oops! */}
-  x=y>
+  name="name"
+  type="string"
+  foo="bar">  {/* oops! */}
+  x="y">
   Body Text
 </MyComponent>
 ```
 
-The body text of this would render as `x=y> Body Text`, which is probably not
+The body text of this would render as `x="y"> Body Text`, which is probably not
 what was intended. This rule requires that these special characters are
 escaped if they appear in the body of a tag.
 
