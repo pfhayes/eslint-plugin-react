@@ -116,6 +116,21 @@ ruleTester.run('no-unescaped-entities', rule, {
       code: [
         'class Comp1 extends Component {',
         '  render() {',
+        '    return <div>Multiple errors: \'>></div>;',
+        '  }',
+        '}'
+      ].join('\n'),
+      args: [1],
+      parser: 'babel-eslint',
+      errors: [
+        {message: 'HTML entities must be escaped.'},
+        {message: 'HTML entities must be escaped.'},
+        {message: 'HTML entities must be escaped.'}
+      ]
+    }, {
+      code: [
+        'class Comp1 extends Component {',
+        '  render() {',
         '    return <div>{"Unbalanced braces"}}</div>;',
         '  }',
         '}'
