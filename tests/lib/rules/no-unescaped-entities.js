@@ -29,7 +29,6 @@ ruleTester.run('no-unescaped-entities', rule, {
         '  }',
         '}'
       ].join('\n'),
-      args: [1],
       parser: 'babel-eslint'
     }, {
       code: [
@@ -39,7 +38,6 @@ ruleTester.run('no-unescaped-entities', rule, {
         '  }',
         '}'
       ].join('\n'),
-      args: [1],
       parser: 'babel-eslint'
     }, {
       code: [
@@ -49,7 +47,6 @@ ruleTester.run('no-unescaped-entities', rule, {
         '  }',
         '}'
       ].join('\n'),
-      args: [1],
       parser: 'babel-eslint'
     }, {
       code: [
@@ -61,7 +58,6 @@ ruleTester.run('no-unescaped-entities', rule, {
         '  }',
         '}'
       ].join('\n'),
-      args: [1],
       parser: 'babel-eslint'
     }, {
       code: [
@@ -71,7 +67,6 @@ ruleTester.run('no-unescaped-entities', rule, {
         '  },',
         '});'
       ].join('\n'),
-      args: [1],
       parser: 'babel-eslint'
     }
   ],
@@ -85,7 +80,6 @@ ruleTester.run('no-unescaped-entities', rule, {
         '  }',
         '}'
       ].join('\n'),
-      args: [1],
       parser: 'babel-eslint',
       errors: [{message: 'HTML entities must be escaped.'}]
     }, {
@@ -98,7 +92,6 @@ ruleTester.run('no-unescaped-entities', rule, {
         '  }',
         '}'
       ].join('\n'),
-      args: [1],
       parser: 'babel-eslint',
       errors: [{message: 'HTML entities must be escaped.'}]
     }, {
@@ -109,7 +102,6 @@ ruleTester.run('no-unescaped-entities', rule, {
         '  }',
         '}'
       ].join('\n'),
-      args: [1],
       parser: 'babel-eslint',
       errors: [{message: 'HTML entities must be escaped.'}]
     }, {
@@ -120,7 +112,6 @@ ruleTester.run('no-unescaped-entities', rule, {
         '  }',
         '}'
       ].join('\n'),
-      args: [1],
       parser: 'babel-eslint',
       errors: [
         {message: 'HTML entities must be escaped.'},
@@ -135,7 +126,6 @@ ruleTester.run('no-unescaped-entities', rule, {
         '  }',
         '}'
       ].join('\n'),
-      args: [1],
       parser: 'babel-eslint',
       errors: [{message: 'HTML entities must be escaped.'}]
     }
