@@ -1271,6 +1271,15 @@ ruleTester.run('prop-types', rule, {
         '}'
       ].join('\n'),
       parserOptions: parserOptions
+    }, {
+      code: [
+        'function Hello({names}) {',
+        '  return names.map((name) => {',
+        '    return <div>{name}</div>;',
+        '  });',
+        '}'
+      ].join('\n'),
+      parser: 'babel-eslint'
     }
   ],
 
@@ -2220,6 +2229,17 @@ ruleTester.run('prop-types', rule, {
       parser: 'babel-eslint',
       errors: [
         {message: '\'name.constructor.firstname\' is missing in props validation'}
+      ]
+    }, {
+      code: [
+        'function SomeComponent({bar}) {',
+        '  function f({foo}) {}',
+        '  return <div className={f()}>{bar}</div>;',
+        '}'
+      ].join('\n'),
+      parserOptions: parserOptions,
+      errors: [
+        {message: '\'bar\' is missing in props validation'}
       ]
     }
   ]
