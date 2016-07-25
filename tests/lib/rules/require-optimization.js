@@ -71,11 +71,30 @@ ruleTester.run('react-require-optimization', rule, {
     parserOptions: parserOptions
   }, {
     code: [
+      'function FunctionalComponent(props) {' +
+      'return <div />;' +
+      '}'
+    ].join('\n'),
+    parser: 'babel-eslint',
+    parserOptions: parserOptions
+  }, {
+    code: [
       'const FunctionalComponent = (props) => {' +
       'return <div />;' +
       '}'
     ].join('\n'),
     parser: 'babel-eslint',
+    parserOptions: parserOptions
+  }, {
+    code: [
+      '@bar',
+      '@pureRender',
+      '@foo',
+      'class DecoratedComponent extends Component {' +
+      '}'
+    ].join('\n'),
+    parser: 'babel-eslint',
+    options: [{allowDecorators: ['renderPure', 'pureRender']}],
     parserOptions: parserOptions
   }],
 
@@ -128,6 +147,20 @@ ruleTester.run('react-require-optimization', rule, {
       message: MESSAGE
     }],
     parser: 'babel-eslint',
+    parserOptions: parserOptions
+  }, {
+    code: [
+      '@bar',
+      '@pure',
+      '@foo',
+      'class DecoratedComponent extends Component {' +
+      '}'
+    ].join('\n'),
+    errors: [{
+      message: MESSAGE
+    }],
+    parser: 'babel-eslint',
+    options: [{allowDecorators: ['renderPure', 'pureRender']}],
     parserOptions: parserOptions
   }]
 });
