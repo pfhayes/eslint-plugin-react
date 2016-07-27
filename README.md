@@ -135,7 +135,9 @@ Finally, enable all of the rules that you would like to use.  Use [our preset](#
 
 If you're searching for React Native specific linting rules, check out [eslint-plugin-react-native](https://github.com/Intellicode/eslint-plugin-react-native).
 
-# Recommended configuration
+# Shareable configurations
+
+## Recommended
 
 This plugin exports a `recommended` configuration that enforce React good practices.
 
@@ -159,10 +161,7 @@ The rules enabled in this configuration are:
 * [react/jsx-no-undef](docs/rules/jsx-no-undef.md)
 * [react/jsx-uses-react](docs/rules/jsx-uses-react.md)
 * [react/jsx-uses-vars](docs/rules/jsx-uses-vars.md)
-* [react/no-danger](docs/rules/no-danger.md)
 * [react/no-deprecated](docs/rules/no-deprecated.md)
-* [react/no-did-mount-set-state](docs/rules/no-did-mount-set-state.md) with `allow-in-func` option
-* [react/no-did-update-set-state](docs/rules/no-did-update-set-state.md) with `allow-in-func` option
 * [react/no-direct-mutation-state](docs/rules/no-direct-mutation-state.md)
 * [react/no-find-dom-node](docs/rules/no-find-dom-node.md)
 * [react/no-is-mounted](docs/rules/no-is-mounted.md)
@@ -171,6 +170,8 @@ The rules enabled in this configuration are:
 * [react/react-in-jsx-scope](docs/rules/react-in-jsx-scope.md)
 
 **Note**: This configuration will also enable JSX in [parser options](http://eslint.org/docs/user-guide/configuring#specifying-parser-options).
+
+## All
 
 This plugin also exports an `all` configuration that includes every available rule.
 This pairs well with the `eslint:all` rule.
